@@ -1,14 +1,15 @@
-import React from 'react'
-import { Button, Box } from '@mui/material'
+import React, {useState} from 'react'
+import { Button, Box, Dialog, DialogTitle, DialogActions } from '@mui/material'
 
 import { OfflineBolt, Person, House as HouseIcon, FileUpload, Folder, AccountBalance, Storage, Lock, LockClock, Book, BookRounded, BookOnline, Money, DoNotDisturbOnTotalSilence, Close, DataExploration } from '@mui/icons-material';
 export default function Home() {
+    const [open, setOpen] = useState(false);
     return (
         <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Box sx={{
                 border: "1px solid black", display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: "350px", flexWrap: "wrap", padding: "10px", gap: "10px", margin: "auto", borderRadius:"10px"
             }}>
-                <Button variant="contained" color="info">
+                <Button variant="contained" color="info" onClick={() => setOpen(true)}>
                     <HouseIcon />
                 </Button>
                 <Button variant="contained" color="info">
@@ -56,6 +57,12 @@ export default function Home() {
                 <Button variant="contained" color="info">
                     <DataExploration />
                 </Button>
+                <Dialog open={!!open}>
+                    <DialogTitle>Acess </DialogTitle>
+                    <DialogActions>
+                        <Button variant='contained' color='info' onClick={()=> setOpen(false)}>Close</Button>
+                    </DialogActions>
+                </Dialog>
 
 
             </Box>
