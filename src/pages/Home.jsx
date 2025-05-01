@@ -7,7 +7,8 @@ export default function Home() {
     return (
         <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Box sx={{
-                border: "1px solid black", display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: "350px", flexWrap: "wrap", padding: "10px", gap: "10px", margin: "auto", borderRadius:"10px"
+        
+                border: "1px solid black", width: "800px",  padding: "10px", gap: "10px", margin: "auto", borderRadius:"10px",display:"grid"
             }}>
                 <Button variant="contained" color="info" onClick={() => setOpen(true)}>
                     <HouseIcon />
